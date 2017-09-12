@@ -13,7 +13,8 @@ class Seating < ApplicationRecord
   end
 
   def full?
-    return true if remaining_seats <= 0 else return false
+    return true if remaining_seats <= 0
+    return false
   end
 
 

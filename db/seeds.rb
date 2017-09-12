@@ -37,6 +37,16 @@ restaurant2 = Restaurant.create({
   })
 
 Seating1 = Seating.create({
-  filled:0,
+  start_hour:0,
   restaurant_id: 1
+  })
+Seating2 = Seating.create({
+  start_hour:0,
+  restaurant_id: 2
+  })
+
+rez1 = Reservation.create({
+  seating_id: 1,
+  email: "andy",
+  party_size: 200
   })

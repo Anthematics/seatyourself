@@ -6,6 +6,8 @@ class SeatingsController < ApplicationController
 	end
 
 	def show
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @seatings = @restaurant.seatings
 	end
 
 	def new
