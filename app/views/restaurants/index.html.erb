@@ -1,0 +1,10 @@
+<h1>Restaurants#resources</h1>
+<p>Find me in app/views/restaurants/resources.html.erb</p>
+
+
+<% @restaurants.each do |each_restaurant| %>
+  <div class="box">
+    <%= render "display", restaurant: each_restaurant %>
+    <%= link_to 'Show', restaurant_path(each_restaurant) %>
+  </div>
+<% end %>
