@@ -1,0 +1,6 @@
+<h1>Click a time slot to add a reservation to:</h1>
+<% @seatings.each do |each_seating| %>
+  <div class="box">
+    <%= link_to("#{each_seating.start_hour} to #{each_seating.start_hour + 2}", new_restaurant_seating_reservations_path(seating_id: each_seating.id)) %>
+  </div>
+<% end %>

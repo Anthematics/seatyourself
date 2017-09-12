@@ -1,0 +1,7 @@
+<h1>Current reservations</h1>
+<% @reservations.each do |each_reservation| %>
+  <div class="box">
+    <%= each_reservation.email %> <br>
+    <%= each_reservation.party_size %>
+  </div>
+<% end %>
