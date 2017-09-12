@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seating_id: 1
+  party_size: 1
+  email: MyString
+
+two:
+  seating_id: 1
+  party_size: 1
+  email: MyString
