@@ -35,3 +35,8 @@ restaurant2 = Restaurant.create({
   capacity: 20,
   Owner_id: 2
   })
+
+Seating1 = Seating.create({
+  filled:0,
+  restaurant_id: 1
+  })

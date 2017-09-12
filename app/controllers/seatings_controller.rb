@@ -6,7 +6,7 @@ class SeatingsController < ApplicationController
 	end
 
 	def show
-		@seating= Seating.find(params[:id])
+    @seating = Seating.find(params[:restaurant_id])
 	end
 
 	def new
@@ -28,17 +28,10 @@ class SeatingsController < ApplicationController
 		@seating= Seating.find(params[:id])
 		if @seating.save
 		redirect_to @seating
+  end
 	end
 
 	def destroy
 		@seating.destroy
 	end
-
-
-"seatings", force: :cascade do |t|
-	t.integer  "Restaurant_id"
-	t.integer  "filled"
-	t.datetime "created_at",    null: false
-	t.datetime "updated_at",    null: false
-	t.index ["Restaurant_id"], name: "index_seatings_on_Restaurant_id"
 end
