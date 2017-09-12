@@ -1,7 +1,6 @@
 class RestaurantsController < ApplicationController
 
 
-<<<<<<< HEAD
   def index
      @restaurants = Restaurant.all
   end
@@ -16,23 +15,6 @@ class RestaurantsController < ApplicationController
 
   def create
      @restaurant = Restaurant.new
-=======
-	def index
-		@resturants = Resturants.all
-	end
-
-	def new
-
-	end
-
-	def create
-
-	end
-
-	def show
-
-	end
->>>>>>> bf6d55dce493e15fdf6d92b6aaae0602cfd1760a
 
 	def edit
 
@@ -42,13 +24,9 @@ class RestaurantsController < ApplicationController
 
 	end
 
-<<<<<<< HEAD
   end
 
   def destroy
-=======
-	def destroy
->>>>>>> bf6d55dce493e15fdf6d92b6aaae0602cfd1760a
 
 	end
 
