@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  cuisine_style: MyText
+  price_range: 
+  email: 
+  phone_number: 
+  address: 
+  capacity: 1
+
+two:
+  name: MyText
+  cuisine_style: MyText
+  price_range: 
+  email: 
+  phone_number: 
+  address: 
+  capacity: 1

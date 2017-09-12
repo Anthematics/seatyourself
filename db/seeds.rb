@@ -5,3 +5,33 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Owner1 = Owner.create({
+  name: "andy"
+  })
+
+restaurant1 = Restaurant.create({
+  name: "andy's tacos",
+  cuisine_style: "mexican",
+  price_range: 4,
+  email: "andy8tran@gmail.com",
+  phone_number: "3412342344",
+  address: "234 asdkflj st",
+  capacity: 234,
+  Owner_id: 1
+  })
+
+Owner2 = Owner.create({
+  name: "lobsang"
+  })
+
+restaurant2 = Restaurant.create({
+  name: "lobsang's restaurant2 ",
+  cuisine_style: "asdfjka;dfjkl ",
+  price_range: 3,
+  email: "asdfjhjksdf",
+  phone_number: "sefwerasdf",
+  address: "asdfjklsdfjklsdfjkl",
+  capacity: 20,
+  Owner_id: 2
+  })
