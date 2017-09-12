@@ -12,7 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20170912173920) do
 
-  create_table "Restaurants", force: :cascade do |t|
+  create_table "owners", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
     t.text     "name"
     t.text     "cuisine_style"
     t.integer  "price_range"
@@ -26,18 +32,12 @@ ActiveRecord::Schema.define(version: 20170912173920) do
     t.index ["Owner_id"], name: "index_Restaurants_on_Owner_id"
   end
 
-  create_table "owners", force: :cascade do |t|
-    t.text     "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "seatings", force: :cascade do |t|
-    t.integer  "Restaurant_id"
+    t.integer  "restaurant_id"
     t.integer  "filled"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["Restaurant_id"], name: "index_seatings_on_Restaurant_id"
+    t.index ["restaurant_id"], name: "index_seatings_on_restaurant_id"
   end
 
 end

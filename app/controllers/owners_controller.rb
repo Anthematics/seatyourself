@@ -5,6 +5,7 @@ class OwnersController < ApplicationController
 	end
 
 	def show
+		@owner = Owner.new
 	end
 
 	def new
@@ -23,7 +24,7 @@ class OwnersController < ApplicationController
 	def update
 		@owner.name = params[:owner] [:name]
 		if @owner.save
-
+			redirect_to @owner
 		end
 	end
 
