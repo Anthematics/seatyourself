@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
+  get 'sessions/create'
+
 resources :users, only: [:new , :create]
  root "restaurants#index"
   resources :restaurants do
