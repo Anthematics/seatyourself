@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$restaurant-color: rgb(240, 192, 138);
+
+
 .wrapper {
   margin-top:80px;
 
@@ -9,45 +12,87 @@
   width: auto;
   grid-template-areas:
     "gutter pic desc desc gutter2"
-    "gutter menus menus contact gutter2";
+    "gutter menus menus contact gutter2"
+    "footer footer footer footer footer ";
   grid-template-columns: 40px 200px auto 200px 40px;
   grid-template-rows: 200px auto;
 
 
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-}
 
-.restaurant-image {
-  grid-area: pic;
-}
+  .restaurant-image {
+    grid-area: pic;
+  }
 
-.summary-and-reservations {
-  grid-area: desc;
-  display:flex;
-  flex-direction: column;
-}
-.restaurant-summary {
-  height: 50%;
-}
+  .summary-and-reservations {
+    grid-area: desc;
+    display:flex;
+    flex-direction: column;
+  }
+  .restaurant-summary {
+    height: auto;
+    p {
+      padding: 5px;
+    }
+  }
 
-.reservations-box {
-  height:50%;
-}
+  .reservations-box {
+    height: auto;
+  }
 
-.menu-box {
-  grid-area: menus;
-}
+  .menu-box {
+    grid-area: menus;
+    background: $restaurant-color;
+    padding: 20px;
+  }
 
-.info-box {
-  grid-area: contact;
+  .info-box {
+    grid-area: contact;
 
-  .contact-info {
-    margin-bottom: 5px;
-    ul {
-      list-style: none;
+    .contact-info {
+      margin-bottom: 5px;
+      ul {
+        list-style: none;
+      }
+
     }
 
   }
 
+  .footer {
+    grid-area:footer;
+    display: flex;
+    justify-content: center;
+    a {
+      margin: 5px;
+    }
+  }
+
+}
+
+
+.index-wrapper {
+  margin: 40px 0px 0px 0px;
+  .index-banner {
+    height: 200px;
+    background-image: url(http://lorempixel.com/1600/800/food/);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      -webkit-text-stroke: 1px black;
+      color: white
+    }
+  }
+
+  .restaurant-box {
+    margin: 20px;
+    padding: 5px;
+    background-color: $restaurant-color;
+    display: flex;
+    .restaurant-summary {
+      margin:10px;
+    }
+  }
 }

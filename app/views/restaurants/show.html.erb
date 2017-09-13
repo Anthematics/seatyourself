@@ -2,14 +2,8 @@
   <%= image_tag "http://lorempixel.com/200/200/food/", alt: "#{@restaurant.name} image", class: "restaurant-image" %>
 
   <div class="summary-and-reservations">
-    <div class="restaurant-summary">
-      <p>
-        Restaurant Description: Describe the food and general vibe, etc.
-      </p>
-      <p>
-        Most popular dishes
-      </p>
-    </div>
+    <%= render "display", restaurant: @restaurant %>
+
 
     <div class="reservations-box">
 
@@ -55,8 +49,10 @@
     <%= image_tag "http://maps.google.com/maps/api/staticmap?center=43.6479182,-79.3855352&zoom=16&size=200x200&maptype=roadmap&sensor=false&language=&markers=color:red|label:none|43.6479182,-79.3855352", alt: "#{@restaurant.name} location image", class:"map" %>
   </div>
 
+  <div class="footer">
+    <%= link_to 'Edit', edit_restaurant_path %>
+    <br>
+    <%= link_to 'Back to index', restaurants_path %>
+  </div>
 
-  <%= link_to 'Edit', edit_restaurant_path %>
-  <br>
-  <%= link_to 'Back to index', restaurants_path %>
 </div>
