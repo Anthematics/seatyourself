@@ -6,9 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Owner1 = Owner.create({
-  name: "andy"
+user1 = User.create({
+  name:"Josh taco ",
+  password:"octopus",
+  email:"joshtaco@taco.taco",
+  password_confirmation:"octopus"
   })
+user2 = User.create({
+    name:"david chicken",
+    password:"octopus",
+    email:"david@david",
+    password_confirmation:"octopus"
+    })
 
 restaurant1 = Restaurant.create({
   name: "andy's tacos",
@@ -18,12 +27,9 @@ restaurant1 = Restaurant.create({
   phone_number: "3412342344",
   address: "234 asdkflj st",
   capacity: 234,
-  owner_id: 1
+  user_id:1
   })
 
-Owner2 = Owner.create({
-  name: "lobsang"
-  })
 
 restaurant2 = Restaurant.create({
   name: "lobsang's restaurant2 ",
@@ -33,14 +39,18 @@ restaurant2 = Restaurant.create({
   phone_number: "sefwerasdf",
   address: "asdfjklsdfjklsdfjkl",
   capacity: 20,
-  owner_id: 2
+  user_id: 2
   })
 
-Seating1 = Seating.create({
+
+
+
+seating1 = Seating.create({
   start_hour:0,
   restaurant_id: 1
   })
-Seating2 = Seating.create({
+
+seating2 = Seating.create({
   start_hour:0,
   restaurant_id: 2
   })
