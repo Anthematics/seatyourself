@@ -36,6 +36,6 @@ class SeatingsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:seating).permit(:start_hour)
+    params.require(:seating).permit(:start_hour,:date)
   end
 end

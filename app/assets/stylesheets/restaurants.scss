@@ -1,3 +1,39 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+main {
+  margin-top:80px;
+
+  display: grid;
+  grid-template-columns: 40px 200px auto 200px 40px;
+  grid-template-rows: 200px auto;
+
+
+  grid-template-areas:
+    "gutter pic desc desc gutter"
+    "gutter menus menus contact gutter";
+
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.restaurant-summary {
+  border: 2px solid red;
+  grid-area: desc;
+}
+
+.reservations-box {
+  border: 2px solid blue;
+  grid-area: menus;
+}
+
+.menu-box {
+  border: 2px solid brown;
+  grid-area: menus;
+}
+
+.contact-box {
+  border: 2px solid yellow;
+  grid-area: menus;
+}

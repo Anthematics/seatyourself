@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+* {
+  font-family: Helvetica;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+nav {
+  position:fixed;
+  width: 100%;
+  top:0px;
+
+  navbar {
+    background: rgb(249, 87, 87);
+    padding: 5px;
+    display: flex;
+
+    a {
+      color: white;
+      padding: 5px;
+      text-decoration: none;
+
+      &:first-child {
+        margin-right: auto;
+      }
+    }
+  }
+  &:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: flex;
+   display: block;
+   height: 0;
+   clear: both;
+  }
+}
+
+main {
+  margin:5px;
+}

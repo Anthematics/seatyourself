@@ -18,7 +18,7 @@ restaurant1 = Restaurant.create({
   phone_number: "3412342344",
   address: "234 asdkflj st",
   capacity: 234,
-  Owner_id: 1
+  owner_id: 1
   })
 
 Owner2 = Owner.create({
@@ -33,7 +33,7 @@ restaurant2 = Restaurant.create({
   phone_number: "sefwerasdf",
   address: "asdfjklsdfjklsdfjkl",
   capacity: 20,
-  Owner_id: 2
+  owner_id: 2
   })
 
 Seating1 = Seating.create({
