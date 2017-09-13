@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170913154559) do
   create_table "owners", force: :cascade do |t|
     t.text     "name"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "uccdted_at", null: false
   end
 
   create_table "reservations", force: :cascade do |t|
