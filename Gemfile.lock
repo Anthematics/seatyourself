@@ -44,6 +44,7 @@ GEM
       awesome_print
       pry-rails
       railties
+    bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
@@ -180,6 +181,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_rails_console
+  bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.1.0)
   hirb
