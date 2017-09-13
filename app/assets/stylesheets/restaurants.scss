@@ -2,38 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-main {
+.wrapper {
   margin-top:80px;
 
   display: grid;
+  width: auto;
+  grid-template-areas:
+    "gutter pic desc desc gutter2"
+    "gutter menus menus contact gutter2";
   grid-template-columns: 40px 200px auto 200px 40px;
   grid-template-rows: 200px auto;
 
-
-  grid-template-areas:
-    "gutter pic desc desc gutter"
-    "gutter menus menus contact gutter";
 
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
 
-.restaurant-summary {
-  border: 2px solid red;
+.restaurant-image {
+  grid-area: pic;
+}
+
+.summary-and-reservations {
   grid-area: desc;
+  display:flex;
+  flex-direction: column;
+}
+.restaurant-summary {
+  height: 50%;
 }
 
 .reservations-box {
-  border: 2px solid blue;
-  grid-area: menus;
+  height:50%;
 }
 
 .menu-box {
-  border: 2px solid brown;
   grid-area: menus;
 }
 
-.contact-box {
-  border: 2px solid yellow;
-  grid-area: menus;
+.info-box {
+  grid-area: contact;
+
+  .contact-info {
+    margin-bottom: 5px;
+    ul {
+      list-style: none;
+    }
+
+  }
+
 }
