@@ -6,8 +6,7 @@ $restaurant-color: rgb(240, 192, 138);
 
 
 .wrapper {
-  margin-top:80px;
-
+  margin-top: 80px;
   display: grid;
   width: auto;
   grid-template-areas:
@@ -73,7 +72,6 @@ $restaurant-color: rgb(240, 192, 138);
 
 
 .index-wrapper {
-  margin: 40px 0px 0px 0px;
   .index-banner {
     height: 200px;
     background-image: url(http://lorempixel.com/1600/800/food/);
