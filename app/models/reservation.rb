@@ -1,6 +1,6 @@
 class Reservation < ApplicationRecord
   belongs_to :seating
-
+  belongs_to :user
   validate   :seating_full
 
   def seating_full
