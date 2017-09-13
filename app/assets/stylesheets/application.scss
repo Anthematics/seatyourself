@@ -23,6 +23,7 @@ nav {
   position:fixed;
   width: 100%;
   top:0px;
+  margin-bottom: 40px;
 
   navbar {
     background: rgb(249, 87, 87);
@@ -39,15 +40,10 @@ nav {
       }
     }
   }
-  &:after {
-   content: " "; /* Older browser do not support empty content */
-   visibility: flex;
-   display: block;
-   height: 0;
-   clear: both;
-  }
+
 }
 
 main {
+  margin-top: 80px;
   margin:5px;
 }
