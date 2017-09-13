@@ -1,7 +1,12 @@
-<p><%= restaurant.name %></p>
-<p><%= restaurant.cuisine_style %></p>
-<p><%= restaurant.price_range%></p>
-<p><%= restaurant.email%></p>
-<p><%= restaurant.phone_number%></p>
-<p><%= restaurant.address%></p>
-<p><%= restaurant.capacity%></p>
+<div class="restaurant-summary">
+  <h2><%= restaurant.name %></h2>
+  <p>
+    <%= restaurant.description ? restaurant.description : "Restaurant Description: Describe the food and general vibe, etc." %>
+  </p>
+  <p>
+    Most popular dishes
+  </p>
+  <p>
+    Price range: <%= restaurant.price_range %>
+  </p>
+</div>
