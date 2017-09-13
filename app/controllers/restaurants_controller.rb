@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-
+before_action :ensure_logged_in, except: [:show, :index]
 
   def index
      @restaurants = Restaurant.all
@@ -18,20 +18,20 @@ class RestaurantsController < ApplicationController
     redirect_to @restaurant
   end
 
-	def edit
+  def edit
     @restaurant = Restaurant.find(params[:id])
-	end
+  end
 
-	def update
+  def update
     @restaurant = Restaurant.find(params[:id])
     @restaurant.update(restaurant_params)
     redirect_to @restaurant
-	end
+  end
 
 
   def destroy
 
-	end
+  end
 
   private
   def restaurant_params
