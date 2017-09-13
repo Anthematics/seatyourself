@@ -2,13 +2,14 @@ class Seating < ApplicationRecord
   belongs_to :restaurant
   has_many :reservations
 
+
   def remaining_seats
     total = 0
     reservations.each do |each_reservation|
       total += each_reservation.party_size
     end
 
-    return restaurant.capacity - total
+    return self.restaurant.capacity - total
 
   end
 
