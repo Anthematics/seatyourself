@@ -23,6 +23,8 @@ class ReservationsController < ApplicationController
       })
       if @reservation.save
         redirect_to restaurants_path
+      else
+        flash[:notice] = "All booked"
       end
   end
 

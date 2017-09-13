@@ -1,5 +1,5 @@
 class SeatingsController < ApplicationController
-before_action :ensure_logged_in, except: [:show, :index]
+before_action :ensure_logged_in
 
   def index
     @restaurant = Restaurant.find(params[:restaurant_id])
