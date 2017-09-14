@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
     end
   end
     def destroy
+      user = User.find_by("email = ?", current_user.email)
       session[:user_id] = nil
       redirect_to restaurants_path , notice: "Successfully logged out. See you soon, #{user.name}!"
   end
