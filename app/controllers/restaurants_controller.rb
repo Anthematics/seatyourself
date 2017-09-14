@@ -17,6 +17,7 @@ before_action :ensure_logged_in, except: [:show, :index]
     @restaurant = Restaurant.create(restaurant_params)
     @restaurant.seating_times = params.require(:restaurant).permit(:seating_times)
     redirect_to @restaurant
+
   end
 
   def edit
@@ -36,7 +37,7 @@ before_action :ensure_logged_in, except: [:show, :index]
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :cuisine_style, :price_range, :email, :phone_number, :address, :capacity, :description)
+    params.require(:restaurant).permit(:name, :cuisine_style, :price_range, :email, :phone_number, :address, :capacity, :description,:user_id)
   end
 
 end
