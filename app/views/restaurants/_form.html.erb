@@ -31,6 +31,10 @@
   <%= f.label :capacity %>
   <%= f.text_field :capacity %>
 </p>
+<p>
+  <%= f.label :seating_times %>
+  <%= f.text_area :seating_times, placeholder: "hours separated by commas (no spaces), like this: 6,7,8,9 ", rows: 3, columns:30%>
+</p>
 
   <%= f.submit %>
 <% end %>
