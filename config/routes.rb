@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 	resources :users, only: [:new , :create]
 	root "restaurants#index"
 
-	get restaurant_seating_reservations  => 'reservations#show'
+	get '/my_reservations', to: 'reservations#my_reservations'
 
 
 
