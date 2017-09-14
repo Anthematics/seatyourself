@@ -2,59 +2,60 @@
 <html>
 <head>
 
-  <title>Seatyourself</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<title>Seatyourself</title>
+	<%= stylesheet_link_tag    'application', media: 'all' %>
+	<%= javascript_include_tag 'application' %>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker({
-      showButtonPanel: true
-    });
-  } );
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+	$( function() {
+		$( "#datepicker" ).datepicker({
+			showButtonPanel: true
+		});
+	} );
 
-  </script>
-  <%= csrf_meta_tags %>
+	</script>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 
 
-  <header>
-    <nav>
-      <navbar>
-        <a href=" /restaurants">Restaurant Listings</a>
-        <% if current_user %>
-          <a>Welcome <%= current_user.name %>.</a> <%= link_to "Log out", session_path("current"), :method => :delete %>
-        <% else %>
-          <%= link_to "Log in", new_session_path %>  <%= link_to "Sign up", new_user_path %>
-        <% end %>
+	<header>
+		<nav>
+			<navbar>
+				<a href=" /restaurants">Restaurant Listings</a>
+				<% if current_user %>
+					<a>Welcome <%= current_user.name %>.</a> <%= link_to "Log out", session_path("current"), :method => :delete %>
+					<%=link_to "My Reservations", restaurant_seating_reservations_path %> 
+				<% else %>
+					<%= link_to "Log in", new_session_path %>  <%= link_to "Sign up", new_user_path %>
+				<% end %>
 
-        <!-- <a href="/sessions/new">Log In</a>
-        <a href="/users/new">Sign Up</a>
-        <%= link_to "Log out", session_path("current"), :method => :delete %> -->
-      </navbar>
-    </nav>
-  </header>
+				<!-- <a href="/sessions/new">Log In</a>
+				<a href="/users/new">Sign Up</a>
+				<%= link_to "Log out", session_path("current"), :method => :delete %> -->
+			</navbar>
+		</nav>
+	</header>
 
-  <main>
+	<main>
 
-    <!-- <p class="userinfo">
-      <% if current_user %>
-        Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-      <% else %>
-        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-      <% end %>
-    </p> -->
+		<!-- <p class="userinfo">
+			<% if current_user %>
+				Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+			<% else %>
+				<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+			<% end %>
+		</p> -->
 
-    <%= yield %>
-    <% if  flash[:notice] %>
-      <div class="flash"><%= flash[:notice] %></div>
-    <% end %>
+		<%= yield %>
+		<% if  flash[:notice] %>
+			<div class="flash"><%= flash[:notice] %></div>
+		<% end %>
 
-  </main>
+	</main>
 
 </body>
 </html>

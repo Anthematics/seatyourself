@@ -1,5 +1,4 @@
 class SeatingsController < ApplicationController
-# before_action :ensure_logged_in, except: [:show, :index]
 
 	def index
 		@restaurant = Restaurant.find(params[:restaurant_id])
@@ -28,13 +27,13 @@ class SeatingsController < ApplicationController
 			end
 
 		end
-    render :show_by_date
+		render :show_by_date
 	end
 
 	def show_by_date
 		@restaurant = Restaurant.find(params[:restaurant_id])
 
-    
+
 	end
 
 	def edit

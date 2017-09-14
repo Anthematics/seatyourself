@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 	resources :users, only: [:new , :create]
 	root "restaurants#index"
 
+	get restaurant_seating_reservations  => 'reservations#show'
+
+
+
 	resources :restaurants do
 		resources :seatings do
 			resource :reservations
