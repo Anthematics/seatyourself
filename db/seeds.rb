@@ -28,7 +28,7 @@ restaurant1 = Restaurant.create({
   address: "234 asdkflj st",
   capacity: 234,
   user_id:1,
-  seating_times:[1,2,3,4]
+  seating_times:[6,8,10]
   })
 
 
@@ -41,24 +41,5 @@ restaurant2 = Restaurant.create({
   address: "asdfjklsdfjklsdfjkl",
   capacity: 20,
   user_id: 2,
-  seating_times:[1,2,3,4]
-  })
-
-
-
-
-seating1 = Seating.create({
-  start_hour:0,
-  restaurant_id: 1
-  })
-
-seating2 = Seating.create({
-  start_hour:0,
-  restaurant_id: 2
-  })
-
-rez1 = Reservation.create({
-  seating_id: 1,
-  email: "andy",
-  party_size: 200
+  seating_times:[6,8,10]
   })
