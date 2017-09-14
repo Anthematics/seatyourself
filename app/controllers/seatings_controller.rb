@@ -1,8 +1,8 @@
 class SeatingsController < ApplicationController
 
 	def index
-		@restaurant = Restaurant.find(params[:restaurant_id])
-		@seatings = @restaurant.seatings
+		flash[:notice] = "Please select a date!"
+		redirect_to restaurant_path(id: params[:restaurant_id])
 	end
 
 	def show
@@ -25,15 +25,12 @@ class SeatingsController < ApplicationController
 					date: params[:seating][:date]
 					})
 			end
-
 		end
 		render :show_by_date
 	end
 
 	def show_by_date
 		@restaurant = Restaurant.find(params[:restaurant_id])
-
-
 	end
 
 	def edit
