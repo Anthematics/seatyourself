@@ -1,4 +1,4 @@
-<h1> Making a reservation for <%= @reservation.seating.restaurant.name  %> at <%= @reservation.seating.start_hour %>pm.</h1>
+<h1> Making a reservation for <%= @reservation.seating.restaurant.name  %> on <%= params[:date] %> at <%= @reservation.seating.start_hour %>pm.</h1>
 
   <%= form_for  :post, url: restaurant_seating_reservations_path  do |f| %>
   <% if @reservation.errors.any? %>
@@ -14,5 +14,5 @@
     <%= f.label :party_size %>
     <%= f.text_field :party_size %>
   </p>
-    <%= f.submit %>
+    <%= f.submit "Make Reservation" %>
   <% end %>
