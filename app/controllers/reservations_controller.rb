@@ -8,11 +8,7 @@ class ReservationsController < ApplicationController
 	end
 
 	def my_reservations
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 5adb58e6cd1f097d7a631dfd1f7609f631a07c9e
 	end
 
 	def new
