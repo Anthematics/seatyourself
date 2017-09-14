@@ -27,16 +27,20 @@
     <nav>
       <navbar>
         <a href=" /restaurants">Restaurant Listings</a>
-        <a href="/sessions/new">Log In</a>
-        <a href="/users/new">Sign Up</a>
-        <%= link_to "Log out", session_path("current"), :method => :delete %>
+        <% if current_user %>
+          <%= link_to "Log out", session_path("current"), :method => :delete %>
+        <% else %>
+          <a href="/sessions/new">Log In</a>
+          <a href="/users/new">Sign Up</a>
+        <% end %>
+
       </navbar>
     </nav>
   </header>
 
   <main>
     <% if  flash[:notice] %>
-      <%= flash[:notice] %>
+      <div class="flash"><%= flash[:notice] %></div>
     <% end %>
 
     <%= yield %>

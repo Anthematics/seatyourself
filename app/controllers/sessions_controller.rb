@@ -6,13 +6,13 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to restaurants_path , notice: "Logged in"
+      redirect_to restaurants_path , notice: "Logged in. Welcome back, #{user.name}!"
     else
       render "new"
     end
   end
     def destroy
       session[:user_id] = nil
-      redirect_to restaurants_path , notice: "logged out "
+      redirect_to restaurants_path , notice: "Successfully logged out. See you soon, #{user.name}!"
   end
 end
