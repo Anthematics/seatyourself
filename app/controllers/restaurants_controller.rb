@@ -15,6 +15,7 @@ before_action :ensure_logged_in, except: [:show, :index]
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
+    @restaurant.seating_times = params.require(:restaurant).permit(:seating_times)
     redirect_to @restaurant
   end
 

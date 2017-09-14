@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170913224516) do
     t.datetime "updated_at",    null: false
     t.integer  "user_id"
     t.text     "description"
+    t.text     "seating_times"
   end
 
   create_table "seatings", force: :cascade do |t|
