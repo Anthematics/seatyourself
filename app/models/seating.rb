@@ -1,7 +1,7 @@
 class Seating < ApplicationRecord
   belongs_to :restaurant
   has_many :reservations
-  validates :email, :party_size, presence: true
+  validates :date, presence: true
   validates_format_of :date, :with =>/((\d){2,}\/){2,}(\d){4}/ , :on => :create
 
 

@@ -28,7 +28,7 @@ restaurant1 = Restaurant.create({
   address: "234 asdkflj st",
   capacity: 234,
   user_id:1,
-  seating_times:[6,8,10]
+  seating_times:"6,8,10"
   })
 
 
@@ -41,5 +41,5 @@ restaurant2 = Restaurant.create({
   address: "asdfjklsdfjklsdfjkl",
   capacity: 20,
   user_id: 2,
-  seating_times:[6,8,10]
+  seating_times:"3,5,7"
   })
