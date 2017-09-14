@@ -23,7 +23,8 @@ class ReservationsController < ApplicationController
       })
 
       if @reservation.save
-        redirect_to restaurants_path
+        flash[:notice] = "All set! You have a reservation at #{@reservation.seating.restaurant.name} at #{@reservation.seating.start_hour} on #{@reservation.seating.date}."
+        redirect_to restaurant_path(@reservation.seating.restaurant)
       else
         render "new"
       end

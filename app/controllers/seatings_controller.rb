@@ -26,15 +26,12 @@ class SeatingsController < ApplicationController
 					date: params[:seating][:date]
 					})
 			end
-
 		end
     render :show_by_date
 	end
 
 	def show_by_date
 		@restaurant = Restaurant.find(params[:restaurant_id])
-
-
 	end
 
 	def edit
