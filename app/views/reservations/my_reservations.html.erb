@@ -2,7 +2,7 @@
 
 <%current_user.reservations.each do |each_reservation|%>
 	<%=each_reservation.seating.restaurant.name %>
-	<%=each_reservation.seating.time %>
+	<%=each_reservation.seating.start_hour %>
 	<%=each_reservation.seating.date %>
 	<%=each_reservation.party_size %>
 <%end%>

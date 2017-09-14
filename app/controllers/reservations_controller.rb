@@ -1,10 +1,14 @@
 class ReservationsController < ApplicationController
-	before_action :ensure_logged_in, except: [:show, :index]
+	before_action :ensure_logged_in
 
 	def index
 		@restaurant = Restaurant.find(restaurant_id)
 		@seating = Seating.find(seating_id)
 		@reservations = @seating.reservations
+	end
+
+	def my_reservations
+
 	end
 
 	def new
@@ -22,21 +26,12 @@ class ReservationsController < ApplicationController
 			 seating_id: params[:seating_id]
 			})
 
-<<<<<<< HEAD
 			if @reservation.save
-				redirect_to restaurants_path
+				flash[:notice] = "All set! You have a reservation at #{@reservation.seating.restaurant.name} at #{@reservation.seating.start_hour} on #{@reservation.seating.date}."
+				redirect_to restaurant_path(@reservation.seating.restaurant)
 			else
 				render "new"
 			end
 	end
-=======
-      if @reservation.save
-        flash[:notice] = "All set! You have a reservation at #{@reservation.seating.restaurant.name} at #{@reservation.seating.start_hour} on #{@reservation.seating.date}."
-        redirect_to restaurant_path(@reservation.seating.restaurant)
-      else
-        render "new"
-      end
-  end
->>>>>>> 608868d6399d91028bd8debdcd5e43465bd808b1
 
 end
