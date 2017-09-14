@@ -14,16 +14,18 @@ class SeatingsController < ApplicationController
 
 	def create
 		@restaurant=Restaurant.find(params[:restaurant_id])
-		unless @restaurant.seatings.find_by(date: params[:seating][:date])
-			@seating_times = @restaurant.seating_times
-			@seating_times.split(",").each do |each_time|
-				Seating.create({
+
+    @seating_times = @restaurant.seating_times
+
+    @seating_times.split(",").each do |each_time|
+      unless @restaurant.seatings.find_by(date: params[:seating][:date], start_hour: each_time)
+        Seating.create({
 					restaurant_id: params[:restaurant_id],
 					start_hour: each_time,
 					date: params[:seating][:date]
 					})
-			end
-		end
+      end
+    end
 		render :show_by_date
 	end
 
