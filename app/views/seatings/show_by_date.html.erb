@@ -1,5 +1,13 @@
-<%= @restaurant.name %>
-<% @restaurant.seatings.where("date = ?", params[:seating][:date]).each do |each_seating| %>
-  <p>Start Time: <%= each_seating.start_hour %></p>
-  <p>Remaining seats: <%= each_seating.remaining_seats %></p>
-  <% end  %>
+<h1><%= @restaurant.name %></h1>
+
+<h2>Pick one of the following seating times:</h2>
+
+<div class="seating-box">
+  <% @restaurant.seatings.where("date = ?", params[:seating][:date]).each do |each_seating| %>
+
+    <div class="each-seating" style="cursor: pointer;" onclick="window.location='<%=  %>'">
+      <p>Start Time: <%= each_seating.start_hour %></p>
+      <p>Remaining seats: <%= each_seating.remaining_seats %></p>
+    </div>
+    <% end  %>
+</div>
