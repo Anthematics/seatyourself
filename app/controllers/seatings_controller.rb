@@ -16,7 +16,7 @@ class SeatingsController < ApplicationController
 		@restaurant=Restaurant.find(params[:restaurant_id])
 		unless @restaurant.seatings.find_by(date: params[:seating][:date])
 			@seating_times = @restaurant.seating_times
-			@seating_times.each do |each_time|
+			@seating_times.split(",").each do |each_time|
 				Seating.create({
 					restaurant_id: params[:restaurant_id],
 					start_hour: each_time,
