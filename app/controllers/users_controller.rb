@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  validates :email, :password, presence: true
+
 
   def new
     @user = User.new
