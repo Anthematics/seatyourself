@@ -15,7 +15,7 @@ before_action :ensure_logged_in, except: [:show, :index]
 
 	def create
 		@restaurant = Restaurant.new(restaurant_params)
-	  @restaurant.seating_times = request_params[:seating_times].split(",").uniq
+	  @restaurant.seating_times = restaurant_params[:seating_times].split(",").uniq.join(",")
 
     @restaurant.save
 
@@ -29,6 +29,9 @@ before_action :ensure_logged_in, except: [:show, :index]
 	def update
 		@restaurant = Restaurant.find(params[:id])
 		@restaurant.update(restaurant_params)
+    @restaurant.seating_times = restaurant_params[:seating_times].split(",").uniq.join(",")
+
+    @restaurant.save
 		redirect_to @restaurant
 	end
 

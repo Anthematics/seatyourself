@@ -9,7 +9,7 @@
       <%= form_for [@restaurant, @restaurant.seatings.build] do |f| %>
       <p>
         <%= f.label :date %>
-        <%= f.text_field :date, id: "datepicker" %>
+        <%= f.text_field :date, id: "datepicker", value: Date.today.strftime("%m/%d/%Y") %>
       </p>
         <%= f.submit "Book for this date" %>
       <% end %>
