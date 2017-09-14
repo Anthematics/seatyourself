@@ -7,7 +7,10 @@
 
     <div class="reservations-box">
 
-        <%= link_to 'See Reservations', restaurant_seatings_path(params[:id]) %>
+
+      <p>Make a reservation for date: <input type="text" id="datepicker"></p>
+
+      <p><%= link_to 'Make a reservation', restaurant_seatings_path(params[:id]) %></p>
     </div>
   </div>
 
