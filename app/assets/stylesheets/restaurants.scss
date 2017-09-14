@@ -26,19 +26,11 @@ $restaurant-color: rgb(240, 192, 138);
 
   .summary-and-reservations {
     grid-area: desc;
-    display:flex;
-    flex-direction: column;
-  }
-  .restaurant-summary {
-    height: auto;
-    p {
-      padding: 5px;
-    }
+    background-color: rgb(252, 120, 208);
+    padding: 5px;
+
   }
 
-  .reservations-box {
-    height: auto;
-  }
 
   .menu-box {
     grid-area: menus;

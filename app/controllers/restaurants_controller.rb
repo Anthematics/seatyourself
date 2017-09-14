@@ -35,7 +35,7 @@ before_action :ensure_logged_in, except: [:show, :index]
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :cuisine_style, :price_range, :email, :phone_number, :address, :capacity)
+    params.require(:restaurant).permit(:name, :cuisine_style, :price_range, :email, :phone_number, :address, :capacity, :description)
   end
 
 end
