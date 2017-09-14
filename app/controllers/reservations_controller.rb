@@ -21,10 +21,11 @@ class ReservationsController < ApplicationController
        user_id: session[:user_id],
        seating_id: params[:seating_id]
       })
+
       if @reservation.save
         redirect_to restaurants_path
       else
-        flash[:notice] = "All booked"
+        render "new"
       end
   end
 

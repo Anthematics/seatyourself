@@ -1,6 +1,11 @@
 <h1> Make a reservation</p>
 
   <%= form_for  :post, url: restaurant_seating_reservations_path  do |f| %>
+  <% if @reservation.errors.any? %>
+    <% @reservation.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
   <p>
     <%= f.label :email %>
     <%= f.text_field :email %>
@@ -11,6 +16,3 @@
   </p>
     <%= f.submit %>
   <% end %>
-
-  <a href= <%= restaurant_path(@restaurant) %> ><button type="button" name="button">Cancel</button>
-  </a>
