@@ -1,9 +1,9 @@
 class Reservation < ApplicationRecord
   belongs_to :seating
   belongs_to :user
-  validate   :seating_full
+  validate   :seating_full?
 
-  def seating_full
+  def seating_full?
     if party_size > self.seating.remaining_seats
       errors.add(:time_slot, "doesn't have enough seats! There are only #{seating.remaining_seats} available.")
     end

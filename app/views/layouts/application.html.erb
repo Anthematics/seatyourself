@@ -22,29 +22,46 @@
 <body>
 
 
-
   <header>
     <nav>
       <navbar>
         <a href=" /restaurants">Restaurant Listings</a>
         <% if current_user %>
+<<<<<<< HEAD
           <%= link_to "Log out", session_path("current"), :method => :delete %>
         <% else %>
           <a href="/sessions/new">Log In</a>
           <a href="/users/new">Sign Up</a>
         <% end %>
 
+=======
+          Welcome <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+        <% else %>
+          <%= link_to "Log in", new_session_path %>  <%= link_to "Sign up", new_user_path %>
+        <% end %>
+
+        <!-- <a href="/sessions/new">Log In</a>
+        <a href="/users/new">Sign Up</a>
+        <%= link_to "Log out", session_path("current"), :method => :delete %> -->
+>>>>>>> d2310e134ee487eea2cd4756202e579b8a4dbdd4
       </navbar>
     </nav>
   </header>
 
   <main>
+
+    <!-- <p class="userinfo">
+      <% if current_user %>
+        Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+      <% else %>
+        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+      <% end %>
+    </p> -->
+
+    <%= yield %>
     <% if  flash[:notice] %>
       <div class="flash"><%= flash[:notice] %></div>
     <% end %>
-
-    <%= yield %>
-
 
   </main>
 
