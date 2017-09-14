@@ -1,0 +1,5 @@
+<%= @restaurant.name %>
+<% @restaurant.seatings.where("date = ?", params[:seating][:date]).each do |each_seating| %>
+  <p>Start Time: <%= each_seating.start_hour %></p>
+  <p>Remaining seats: <%= each_seating.remaining_seats %></p>
+  <% end  %>
