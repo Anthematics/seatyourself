@@ -48,11 +48,11 @@
         <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
       <% end %>
     </p> -->
-
-    <%= yield %>
     <% if  flash[:notice] %>
       <div class="flash"><%= flash[:notice] %></div>
     <% end %>
+    <%= yield %>
+
 
   </main>
 
