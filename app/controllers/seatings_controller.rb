@@ -27,8 +27,8 @@ before_action :ensure_logged_in, except: [:show, :index]
   def update
     @seating= Seating.find(params[:id])
     if @seating.save
-    redirect_to @seating
-  end
+      redirect_to @seating
+    end
   end
 
   def destroy
@@ -36,7 +36,7 @@ before_action :ensure_logged_in, except: [:show, :index]
   end
 
   private
-  def restaurant_params
-    params.require(:seating).permit(:start_hour,:date)
+  def seating_params
+    params.require(:seating).permit(:date)
   end
 end
