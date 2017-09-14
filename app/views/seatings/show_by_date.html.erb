@@ -3,7 +3,7 @@
 <h2>What time would you like to book for?</h2>
 
 <div class="seating-box">
-  <% @restaurant.seatings.where("date = ?", params[:seating][:date]).order(:start_hour).each do |each_seating| %>
+  <% @restaurant.seatings.where("date = ?", params[:seating][:date]).each do |each_seating| %>
     <% unless each_seating.full? %>
       <div class="each-seating" style="cursor: pointer;" onclick="window.location='<%=  new_restaurant_seating_reservations_path(seating_id: each_seating.id, date: params[:seating][:date] ) %>'">
         <h3><%= each_seating.start_hour %></h3>

@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20170914225654) do
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "start_hour"
+    t.string   "start_hour"
     t.string   "date"
     t.index ["restaurant_id"], name: "index_seatings_on_restaurant_id"
   end

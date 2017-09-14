@@ -24,7 +24,7 @@ restaurant1 = Restaurant.create({
   cuisine_style: "mexican",
   price_range: 4,
   email: "andy8tran@gmail.com",
-  phone_number: "3412342344",
+  phone_number: 3412342344,
   address: "234 asdkflj st",
   capacity: 234,
   user_id:1,

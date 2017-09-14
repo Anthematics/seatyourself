@@ -15,6 +15,7 @@ before_action :ensure_logged_in, except: [:show, :index]
 
 	def create
 		@restaurant = Restaurant.new(restaurant_params)
+    @restaurant.user_id = current_user.id
 	  @restaurant.seating_times = restaurant_params[:seating_times].split(",").uniq.join(",")
 
     @restaurant.save
