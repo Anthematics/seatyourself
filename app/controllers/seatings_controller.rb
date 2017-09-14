@@ -31,6 +31,14 @@ class SeatingsController < ApplicationController
 
 	def show_by_date
 		@restaurant = Restaurant.find(params[:restaurant_id])
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 608868d6399d91028bd8debdcd5e43465bd808b1
+>>>>>>> 15943bc4f7f46690ec439f6b48dbac3993d632d4
 	end
 
 	def edit
