@@ -27,8 +27,16 @@ $secondary_dark: #836fa9;
 }
 
 .flash {
+  padding: 10px;
   text-align: center;
   background-color: yellow;
+  position: fixed;
+  top: 40px;
+  margin: auto;
+  left: 0;
+  right: 0;
+
+
 }
 
 nav {

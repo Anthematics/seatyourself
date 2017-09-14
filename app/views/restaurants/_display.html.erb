@@ -4,9 +4,8 @@
     <%= restaurant.description ? restaurant.description : "Restaurant Description: Describe the food and general vibe, etc." %>
   </p>
   <p>
-    Most popular dishes
-  </p>
-  <p>
-    Price range: <%= restaurant.price_range %>
+    Price range: <% restaurant.price_range.times do %>
+    <%= "$" %>
+    <% end %>
   </p>
 </div>

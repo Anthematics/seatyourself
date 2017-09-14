@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @seating = Seating.find(params[:seating_id])
-    @reservation = Reservation.new
+    @reservation = Reservation.new(seating: @seating)
 
   end
 
