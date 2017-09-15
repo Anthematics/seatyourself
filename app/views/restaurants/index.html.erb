@@ -1,22 +1,22 @@
 <div class="index-wrapper">
-  <div class="index-banner">
-    <h1>Restaurants index</h1>
-  </div>
+	<div class="index-banner">
+		<h1>Restaurants index</h1>
+	</div>
 
-  <div class="featured-two">
+	<div class="featured-two">
 
-  </div>
+	</div>
 
-  <div class="all-restaurants" >
-    <% @restaurants.each do |each_restaurant| %>
-      <div class="restaurant-box"  style="cursor: pointer;" onclick="window.location='<%=restaurant_path(each_restaurant)%>';">
+	<div class="all-restaurants" >
+		<% @restaurants.each do |each_restaurant| %>
+			<div class="restaurant-box"  style="cursor: pointer;" onclick="window.location='<%=restaurant_path(each_restaurant)%>';">
 
-        <%= image_tag "http://lorempixel.com/100/100/food/", alt: "#{each_restaurant.name} image", class: "restaurant-image-index" %>
+				<%= image_tag "http://lorempixel.com/100/100/food/", alt: "#{each_restaurant.name} image", class: "restaurant-image-index" %>
 
-        <%= render "display", restaurant: each_restaurant %>
+				<%= render "display", restaurant: each_restaurant %>
 
-      </div>
-    <% end %>
-  </div>
+			</div>
+		<% end %>
+	</div>
 
 </div>

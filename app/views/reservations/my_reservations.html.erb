@@ -1,8 +1,8 @@
-<h1>Current reservations</h1>
+<h1>Current reservations<br><br></h1>
 
 <%current_user.reservations.each do |each_reservation|%>
 	<p> <b> Restaurant name: </b> <%=each_reservation.seating.restaurant.name %> </p>
-	<p> <b>Reservation time: </b> <%=each_reservation.seating.start_hour %> </p>
+	<p> <b> Reservation time: </b> <%=each_reservation.seating.start_hour %> </p>
 	<p> <b> Reservation date: </b> <%=each_reservation.seating.date %> </p>
 	<p> <b> Your party size: </b> <%=each_reservation.party_size %> </p> <br>
 <%end%>

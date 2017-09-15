@@ -12,87 +12,87 @@ $secondary_dark: #836fa9;
 
 
 .wrapper {
-  margin-top: 80px;
-  display: grid;
-  width: auto;
-  grid-template-areas:
-    "gutter pic desc desc gutter2"
-    "gutter menus menus contact gutter2"
-    "footer footer footer footer footer ";
-  grid-template-columns: 40px 200px auto 200px 40px;
-  grid-template-rows: 200px auto;
+	margin-top: 80px;
+	display: grid;
+	width: auto;
+	grid-template-areas:
+		"gutter pic desc desc gutter2"
+		"gutter menus menus contact gutter2"
+		"footer footer footer footer footer ";
+	grid-template-columns: 40px 200px auto 200px 40px;
+	grid-template-rows: 200px auto;
 
 
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
 
-  .restaurant-image {
-    grid-area: pic;
-  }
+	.restaurant-image {
+		grid-area: pic;
+	}
 
-  .summary-and-reservations {
-    grid-area: desc;
-    background-color: $primary_light;
-    padding: 5px;
+	.summary-and-reservations {
+		grid-area: desc;
+		background-color: $primary_light;
+		padding: 5px;
 
-  }
+	}
 
 
-  .menu-box {
-    grid-area: menus;
-    background: $secondary;
-    padding: 20px;
-  }
+	.menu-box {
+		grid-area: menus;
+		background: $secondary;
+		padding: 20px;
+	}
 
-  .info-box {
-    grid-area: contact;
-    background: $secondary_light;
-    padding: 5px;
-    .contact-info {
-      margin-bottom: 5px;
-      ul {
-        list-style: none;
+	.info-box {
+		grid-area: contact;
+		background: $secondary_light;
+		padding: 5px;
+		.contact-info {
+			margin-bottom: 5px;
+			ul {
+				list-style: none;
 
-      }
-    }
-    img {
-      width: 100%;
-    }
-  }
+			}
+		}
+		img {
+			width: 100%;
+		}
+	}
 
-  .footer {
-    grid-area:footer;
-    display: flex;
-    justify-content: center;
-    a {
-      margin: 5px;
-    }
-  }
+	.footer {
+		grid-area:footer;
+		display: flex;
+		justify-content: center;
+		a {
+			margin: 5px;
+		}
+	}
 
 }
 
 
 .index-wrapper {
-  .index-banner {
-    height: 200px;
-    background-image: url(http://lorempixel.com/1600/800/food/);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    h1 {
-      font-size: 40px;
-      -webkit-text-stroke: 2px black;
-      color: white
-    }
-  }
+	.index-banner {
+		height: 200px;
+		background-image: url(http://lorempixel.com/1600/800/food/);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		h1 {
+			font-size: 40px;
+			-webkit-text-stroke: 2px black;
+			color: white
+		}
+	}
 
-  .restaurant-box {
-    margin: 20px;
-    padding: 10px;
-    background-color: $secondary_light;
-    display: flex;
-    .restaurant-summary {
-      margin:10px;
-    }
-  }
+	.restaurant-box {
+		margin: 20px;
+		padding: 10px;
+		background-color: $secondary_light;
+		display: flex;
+		.restaurant-summary {
+			margin:10px;
+		}
+	}
 }
