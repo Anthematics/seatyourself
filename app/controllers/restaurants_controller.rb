@@ -1,49 +1,57 @@
 class RestaurantsController < ApplicationController
 before_action :ensure_logged_in, except: [:show, :index]
+before_action :load_picture, only: [:show, :edit, :update, :destroy]
+before_action :ensure_user_owns_restaurant, except: [:show, :index]
 
-	def index
-		 @restaurants = Restaurant.all
-	end
+  def index
+     @restaurants = Restaurant.all
+  end
 
-	def show
-		@restaurant = Restaurant.find(params[:id])
-	end
+  def show
+     #it is defined at the end of this class
+    load_picture
+  end
 
-	def new
-		 @restaurant = Restaurant.new
-	 end
+  def new
+     @restaurant = Restaurant.new
+   end
 
-	def create
-		@restaurant = Restaurant.new(restaurant_params)
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
     @restaurant.user_id = current_user.id
-	  @restaurant.seating_times = restaurant_params[:seating_times].split(",").uniq.join(",")
-
-    @restaurant.save
-
-		redirect_to @restaurant
-	end
-
-	def edit
-		@restaurant = Restaurant.find(params[:id])
-	end
-
-	def update
-		@restaurant = Restaurant.find(params[:id])
-		@restaurant.update(restaurant_params)
     @restaurant.seating_times = restaurant_params[:seating_times].split(",").uniq.join(",")
 
     @restaurant.save
-		redirect_to @restaurant
-	end
+
+    redirect_to @restaurant
+  end
+
+  def edit
+    load_picture
+  end
+
+  def update
+    load_picture
+    @restaurant.update(restaurant_params)
+    @restaurant.seating_times = restaurant_params[:seating_times].split(",").uniq.join(",")
+
+    @restaurant.save
+    redirect_to @restaurant
+  end
 
 
-	def destroy
+  def destroy
+    load_picture
+  end
 
-	end
+  def load_picture
+    @restaurant = Restaurant.find(params[:id])
+  end
 
-	private
-	def restaurant_params
-		params.require(:restaurant).permit(:name, :cuisine_style, :price_range, :email, :phone_number, :address, :capacity, :description,:user_id,:seating_times)
-	end
+
+  private
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :cuisine_style, :price_range, :email, :phone_number, :address, :capacity, :description,:user_id,:seating_times)
+  end
 
 end
