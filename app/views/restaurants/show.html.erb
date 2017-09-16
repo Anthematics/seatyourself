@@ -1,73 +1,75 @@
 <div class="wrapper">
-	<%= image_tag "http://lorempixel.com/200/200/food/", alt: "#{@restaurant.name} image", class: "restaurant-image" %>
+  <%= image_tag "http://lorempixel.com/200/200/food/", alt: "#{@restaurant.name} image", class: "restaurant-image" %>
 
 
-	<div class="summary-and-reservations">
-		<%= render "display", restaurant: @restaurant %>
+  <div class="summary-and-reservations">
+    <%= render "display", restaurant: @restaurant %>
 
 
-		<div class="reservations-box">
-			<%= form_for [@restaurant, @restaurant.seatings.build] do |f| %>
-			<p>
-				<%= f.label :date %>
-				<%= f.text_field :date, id: "datepicker", value: Date.today.strftime("%m/%d/%Y") %>
-			</p>
-				<%= f.submit "Book for this date" %>
-			<% end %>
+    <div class="reservations-box">
+      <%= form_for [@restaurant, @restaurant.seatings.build] do |f| %>
+      <p>
+        <%= f.label :date %>
+        <%= f.text_field :date, id: "datepicker", value: Date.today.strftime("%m/%d/%Y") %>
+      </p>
+        <%= f.submit "Book for this date" %>
+      <% end %>
 
-		</div>
-	</div>
+    </div>
+  </div>
 
-	<div class="menu-box">
-		<h2>Menu</h2>
-		<div class="menu-section">
-			<h3>Appetizers</h3>
-			<ul>
-				<li>nachos</li>
-				<li>chips n guac</li>
-				<li>idk</li>
-				<li>idk2</li>
-				<li>idk3</li>
-			</ul>
-		</div>
-		<div class="menu-section">
-			<h3>Entrees</h3>
-			<ul>
-				<li>tacos</li>
-				<li>burritos</li>
-				<li>idk1</li>
-				<li>idk2</li>
-				<li>idk3</li>
-			</ul>
-		</div>
-	</div>
+  <div class="menu-box">
+    <h2>Menu</h2>
+    <div class="menu-section">
+      <h3>Appetizers</h3>
+      <ul>
+        <li>nachos</li>
+        <li>chips n guac</li>
+        <li>idk</li>
+        <li>idk2</li>
+        <li>idk3</li>
+      </ul>
+    </div>
+    <div class="menu-section">
+      <h3>Entrees</h3>
+      <ul>
+        <li>tacos</li>
+        <li>burritos</li>
+        <li>idk1</li>
+        <li>idk2</li>
+        <li>idk3</li>
+      </ul>
+    </div>
+  </div>
 
-	<div class="info-box">
-		<div class="contact-info">
-			<p><%= @restaurant.email   %></p>
-			<p><%= @restaurant.phone_number %></p>
-			<p><%= @restaurant.address %></p>
-			<div id="map" > </div>
+  <div class="info-box">
+    <div class="contact-info">
+      <p><%= @restaurant.email   %></p>
+      <p><%= @restaurant.phone_number %></p>
+      <p><%= @restaurant.address %></p>
+      <div id="map" > </div>
 
-		</div>
+    </div>
 
 <script>
-	var map;
-	function initMap() {
-		map = new google.maps.Map(document.getElementById('map'), {
-			center: {lat: -34.397, lng: 150.644},
-			zoom: 8
-		});
-	}
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 8
+    });
+  }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWCToOYhU5QIlEBJ1LtIiDzMADcNl623k&callback=initMap"
-		async defer></script>
-	</div>
+    async defer></script>
+  </div>
 
-	<div class="footer">
-		<%= link_to 'Edit', edit_restaurant_path %>
-		<br>
-		<%= link_to 'Back to index', restaurants_path %>
-	</div>
+  <div class="footer">
+    <% if (@user. == current_user.email) %>
+    <%= link_to 'Edit', edit_restaurant_path(@user) %>
+    <%end %>
+    <br>
+    <%= link_to 'Back to index', restaurants_path %>
+  </div>
 
 </div>
