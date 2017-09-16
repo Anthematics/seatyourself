@@ -1,6 +1,5 @@
 class RestaurantsController < ApplicationController
 before_action :ensure_logged_in, except: [:show, :index]
-before_action :load_picture, only: [:show, :edit, :update, :destroy]
 before_action :ensure_user_owns_restaurant, except: [:show, :index]
 
 
