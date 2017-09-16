@@ -3,13 +3,14 @@ before_action :ensure_logged_in, except: [:show, :index]
 before_action :load_picture, only: [:show, :edit, :update, :destroy]
 before_action :ensure_user_owns_restaurant, except: [:show, :index]
 
+
+
   def index
      @restaurants = Restaurant.all
   end
 
   def show
-     #it is defined at the end of this class
-    load_picture
+    @restaurant = find_restaurant
   end
 
   def new
@@ -27,11 +28,11 @@ before_action :ensure_user_owns_restaurant, except: [:show, :index]
   end
 
   def edit
-    load_picture
+    @restaurant = find_restaurant
   end
 
   def update
-    load_picture
+    @restaurant = find_restaurant
     @restaurant.update(restaurant_params)
     @restaurant.seating_times = restaurant_params[:seating_times].split(",").uniq.join(",")
 
@@ -41,11 +42,11 @@ before_action :ensure_user_owns_restaurant, except: [:show, :index]
 
 
   def destroy
-    load_picture
+    @restaurant = find_restaurant
   end
 
-  def load_picture
-    @restaurant = Restaurant.find(params[:id])
+  def find_restaurant
+    Restaurant.find(params[:id])
   end
 
 

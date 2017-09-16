@@ -65,7 +65,7 @@
   </div>
 
   <div class="footer">
-    <% if (@user. == current_user.email) %>
+    <% if current_user && @user.email == current_user.email %>
     <%= link_to 'Edit', edit_restaurant_path(@user) %>
     <%end %>
     <br>
