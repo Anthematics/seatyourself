@@ -1,11 +1,11 @@
 class RestaurantsController < ApplicationController
 before_action :ensure_logged_in, except: [:show, :index]
-before_action :ensure_user_owns_restaurant, except: [:show, :index]
+# before_action :ensure_user_owns_restaurant, except: [:show, :index, :new, :create]
 
 
 
   def index
-     @restaurants = Restaurant.all
+    @restaurants = Restaurant.all
   end
 
   def show
@@ -13,7 +13,7 @@ before_action :ensure_user_owns_restaurant, except: [:show, :index]
   end
 
   def new
-     @restaurant = Restaurant.new
+    @restaurant = Restaurant.new
    end
 
   def create
@@ -28,6 +28,8 @@ before_action :ensure_user_owns_restaurant, except: [:show, :index]
 
   def edit
     @restaurant = find_restaurant
+    ensure_user_owns_restaurant
+
   end
 
   def update
